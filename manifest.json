@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": ".beyond DNS",
   "short_name": "BEYOND-DNS",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Resolves domains from .beyond name systems as well as all other OpenNIC & other blockchain domain names",
   "icons": {
     "16": "icon-16.png",
