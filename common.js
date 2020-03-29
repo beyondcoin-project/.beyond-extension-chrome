@@ -42,7 +42,7 @@
 
   * Looks like it's a standard to not to shuffle the IP list, i.e. try
     returned addresses in their original order. Firefox, Chrome and curl
-    all do that. That's why BDNS resolver (bdns.io) shuffles results by
+    all do that. That's why BEYOND-DNS resolver (bdns.io) shuffles results by
     default.
   * Unlike Firefox, Chrome will periodically reload a tab which loading was
     aborted by an extension. Because of this and transparent retries on
@@ -52,15 +52,7 @@
 
 // Update manifest when this list is changed.
 var apiBaseURLs = [
-  'https://bdns.at/r/',
-  'https://bdns.by/r/',
-  'https://bdns.co/r/',
-  'https://bdns.im/r/',
-  'https://bdns.io/r/',
-  'https://bdns.link/r/',
-  'https://bdns.nu/r/',
-  'https://bdns.pro/r/',
-  'https://b-dns.se/r/',
+  'https://dns.beyondnic.com/'
 ];
 
 var apiBaseUrlIndex = Math.floor(Math.random() * apiBaseURLs.length);
@@ -75,6 +67,8 @@ var allURLs = {
     // ws(s):// - Chrome 58+, not supported by Firefox yet.
     // ws(s):// removed because they upset AMO review staff and Google's
     // uploader when present in manifest.json.
+    // Beyondcoin
+    "*://*.beyond/*", "ftp://*.beyond/*",
     // Namecoin
     "*://*.bit/*",    "ftp://*.bit/*",
     // Emercoin
@@ -132,7 +126,7 @@ function resolveViaAPI(domain, async, done) {
   xhr.onreadystatechange = function () {
     var ips = (xhr.responseText || '').trim();
 
-    console.info('BDNS: ' + domain + ': from ' + apiBase + ': readyState=' + xhr.readyState + ', status=' + xhr.status + ', response=' + ips.replace(/\r?\n/g, ',')); //-
+    console.info('BEYOND-DNS: ' + domain + ': from ' + apiBase + ': readyState=' + xhr.readyState + ', status=' + xhr.status + ', response=' + ips.replace(/\r?\n/g, ',')); //-
 
     if (xhr.readyState == 4) {
       if (xhr.status == 200 && ips.match(/^[\d.\r\n]+$/)) {
@@ -151,7 +145,7 @@ function resolveViaAPI(domain, async, done) {
 
   xhr.ontimeout = function () {
     apiTimeout = Math.min(apiTimeout * 1.5, 30000);
-    console.warn('BDNS: ' + domain + ': resolver has timed out, increasing timeout to ' + apiTimeout + 'ms'); //-
+    console.warn('BEYOND-DNS: ' + domain + ': resolver has timed out, increasing timeout to ' + apiTimeout + 'ms'); //-
     // Error handled is called from onreadystatechange.
   };
 
@@ -176,5 +170,5 @@ function rotateApiHost() {
     apiBaseUrlIndex = 0;
   }
 
-  console.info('BDNS: switched to API server #' + apiBaseUrlIndex + ' at ' + (new Date).toTimeString()); //-
+  console.info('BEYOND-DNS: switched to API server #' + apiBaseUrlIndex + ' at ' + (new Date).toTimeString()); //-
 }

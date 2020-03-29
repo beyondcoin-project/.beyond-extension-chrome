@@ -1,20 +1,12 @@
-# ![BDNS:](https://blockchain-dns.info/img/ext/icon-32.png) Blockchain-DNS
+# ![BEYOND-DNS:](https://cdn.beyondcoin.io/images/common/dot-beyond.png) Beyondcoin-DNS
 
-B-DNS addon for Chrome lets you surf Namecoin and Emercoin domains:
-
-* *.bit* - such as http://nx.bit
-* *.lib* - such as http://rutracker.lib, http://flibusta.lib
-* *.emc*
-* *.bazar*
-* *.coin*
-
-...as well as custom [OpenNIC TLDs](https://wiki.opennic.org/opennic/dot) - *.bbs*, *.chan* and a bunch of others.
+BEYOND-DNS addon for Chrome lets you surf **.beyond**, and OpenNIC domains, and other OpenNIC peered domains.
 
 -------
 
 **Attention: Chrome requires `http://` prefix or a pathname**
 
-If you type an address like `nx.bit` into the address bar and hit Enter - you will be taken to Google search page. You have to type `http://nx.bit` or add a slash at the end: `nx.bit/`. See [this issue for details](https://github.com/B-DNS/Chrome/issues/2).
+If you type an address like `bynd.beyond` into the address bar and hit Enter - you will be taken to Google search page. You have to type `http://bynd.beyond` or add a slash at the end: `bynd.beyond/`. See [this issue for details](https://github.com/B-DNS/Chrome/issues/2).
 
 -------
 
@@ -22,11 +14,16 @@ If you type an address like `nx.bit` into the address bar and hit Enter - you wi
 
 -------
 
-B-DNS is a public web resolver. Read more at https://blockchain-dns.info (API description is [here](https://github.com/B-DNS/Resolver)).
+BEYOND-DNS is a public web resolver. Read more at https://blockchain-dns.info (API description is [here](https://github.com/B-DNS/Resolver)).
 
-[There](https://blockchain-dns.info/explorer/) you will also find a catalogue of existing domains in the supported blockchain name systems.
+For the list of OpenNIC support domain names see the [full list](https://wiki.opennic.org/opennic/dot).
 
-...And we're also [giving out NMC/EMC domains for free](https://blockchain-dns.info/giveaway).
+--------
+
+## Installing Production Version
+
+Coming soon!
+<!--Download from the Chrome Web Store: [.beyond DNS](https://chrome.google.com/webstore/detail/beyond-dns/?hl=en-US)-->
 
 --------
 
@@ -34,7 +31,7 @@ B-DNS is a public web resolver. Read more at https://blockchain-dns.info (API de
 
 You can permanently load a debug (unsigned) extension into Chrome, i.e. it will survive restart.
 
-**Disable existing BDNS extension, if installed, before installing its debug version!**
+**Disable existing BEYOND-DNS extension, if installed, before installing its debug version!**
 
 1. Open Extensions tab: click on the button with 3 dots, open _More tools_ submenu, then click on _Extensions_ item.
 2. In the tab that has just opened, tick the checkbox named _Developer mode_, then click on _Load unpacked extension_ button that should have appeared.
