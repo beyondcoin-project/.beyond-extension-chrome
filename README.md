@@ -6,7 +6,7 @@ BEYOND-DNS addon for Chrome lets you surf **.beyond**, and OpenNIC domains, and 
 
 **Attention: Chrome requires `http://` prefix or a pathname**
 
-If you type an address like `bynd.beyond` into the address bar and hit Enter - you will be taken to Google search page. You have to type `http://bynd.beyond` or add a slash at the end: `bynd.beyond/`. See [this issue for details](https://github.com/B-DNS/Chrome/issues/2).
+If you type an address like `bynd.beyond` into the address bar and hit Enter - you will be taken to Google search page. You have to type `http://bynd.beyond` or add a slash at the end: `bynd.beyond/`. See [this issue for details](https://github.com/beyondcoin-project/.beyond-extension-chrome/issues/2).
 
 -------
 
@@ -35,9 +35,9 @@ You can permanently load a debug (unsigned) extension into Chrome, i.e. it will 
 
 1. Open Extensions tab: click on the button with 3 dots, open _More tools_ submenu, then click on _Extensions_ item.
 2. In the tab that has just opened, tick the checkbox named _Developer mode_, then click on _Load unpacked extension_ button that should have appeared.
-3. Select the extension's directory. The directory should contain all files from the [Chrome GitHub repository](https://github.com/B-DNS/Chrome) and all PNG images from [this repository](https://github.com/B-DNS/Logos).
+3. Select the extension's directory. The directory should contain all files from the [Chrome GitHub repository](https://github.com/beyondcoin-project/.beyond-extension-chrome) and all PNG images.
 4. Once the open dialog is submitted, a new extension should appear in the Extensions tab. Click on _background page_ link (next to _Inspect views_) - this will open console window.
-5. In a regular Chrome tab, navigate to a resource in question (e.g. `nx.bit/`) - you will notice the console window is populated with lines. Select them and copy to clipboard, or use the context menu's _Save as_ command to produce a log file. Then submit the log along with your [GitHub issue](https://github.com/B-DNS/Chrome/issues/new).
+5. In a regular Chrome tab, navigate to a resource in question (e.g. `bynd.beyond/`) - you will notice the console window is populated with lines. Select them and copy to clipboard, or use the context menu's _Save as_ command to produce a log file. Then submit the log along with your [GitHub issue](https://github.com/beyondcoin-project/.beyond-extension-chrome/issues/new).
 
 ![Step 1](https://blockchain-dns.info/img/debug-load/chrome-1.png)
 ![Step 2](https://blockchain-dns.info/img/debug-load/chrome-2.png)
