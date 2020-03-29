@@ -226,6 +226,6 @@ chrome.tabs.onUpdated.addListener(function (id, changeInfo) {
 
 chrome.browserAction.onClicked.addListener(function () {
   chrome.tabs.create({
-    url: "https://beyondnic.com"
+    url: "https://byndnic.com"
   });
 });
