@@ -52,7 +52,7 @@
 
 // Update manifest when this list is changed.
 var apiBaseURLs = [
-  'https://dns.byndnic.com/'
+  'http://dns.byndnic.com/'
 ];
 
 var apiBaseUrlIndex = Math.floor(Math.random() * apiBaseURLs.length);
@@ -129,8 +129,8 @@ function resolveViaAPI(domain, async, done) {
     console.info('BEYOND-DNS: ' + domain + ': from ' + apiBase + ': readyState=' + xhr.readyState + ', status=' + xhr.status + ', response=' + ips.replace(/\r?\n/g, ',')); //-
 
     if (xhr.readyState == 4) {
-      if (xhr.status == 200 && ips.match(/^[\d.\r\n]+$/)) {
-        ips = ips.split(/\r?\n/);
+      if (xhr.status == 200) {
+        ips = JSON.parse(ips);
         done(ips);
       } else if (xhr.status == 404 && ips == 'nx') {
         done([]);
@@ -156,7 +156,7 @@ function resolveViaAPI(domain, async, done) {
   }
 
   try {
-    var apiURL = apiBase + encodeURIComponent(domain);
+    var apiURL = apiBase + encodeURIComponent(domain) + '/a';
     xhr.open("GET", apiURL, async);
     xhr.send();
     return xhr;
